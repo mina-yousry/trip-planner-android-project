@@ -1,0 +1,4 @@
+#Tue Mar 20 23:48:38 EET 2018
+base.0=E\:\\MINA\\iti\\9 month program\\Android\\final Project\\20-3-2018\\FacebookLogin\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\87
+path.0=classes.dex
+renamed.0=classes.dex

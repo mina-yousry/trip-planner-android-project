@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.hazem.facebooklogin.views.AddTrip">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="com.example.hagar.autocomplete.AddTrip">
+
+
+            <TextView
+                android:id="@+id/addTripTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="49dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/add"
+                android:textColor="@color/txt_clr"
+                android:textSize="32sp" />
+
+
+            <View
+                android:id="@+id/firstSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/addTripTxt"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="#DED8D8" />
+
+
+            <TextView
+                android:id="@+id/tripNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/addTripTxt"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="100dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/ttipname"
+                android:textColor="@color/txt_clr" />
+
+            <EditText
+                android:id="@+id/tripNameId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tripNameTxt"
+                android:layout_alignBottom="@+id/tripNameTxt"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@+id/tripNameTxt"
+                android:ems="10"
+                android:hint="@string/trip_name"
+                android:textColorHint="@color/input_login_hint" />
+
+            <TextView
+                android:id="@+id/startPointTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/tripNameId"
+                android:layout_marginTop="37dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/start"
+                android:textColor="@color/txt_clr" />
+
+            <fragment
+                android:id="@+id/place_autocomplete_fragment"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/startPointTxt"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/startPointTxt">
+
+            </fragment>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/startPointTxt"
+                android:layout_marginTop="44dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/end"
+                android:textColor="@color/txt_clr" />
+
+            <fragment
+                android:id="@+id/place_autocomplete_fragment2"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/textView4"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/textView4">
+
+            </fragment>
+
+            <View
+                android:id="@+id/secondSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/place_autocomplete_fragment2"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="#DED8D8" />
+
+
+            <TextView
+                android:id="@+id/dateTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/startPointTxt"
+                android:layout_alignStart="@+id/startPointTxt"
+                android:layout_below="@+id/secondSeparator"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/date2"
+                android:textColor="@color/txt_clr" />
+
+            <Button
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_below="@+id/dateTxt"
+                style="@style/button_style"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/set_date" />
+
+            <TextView
+                android:id="@+id/selected_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/datePicker"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@+id/datePicker"
+
+                />
+
+
+            <View
+                android:id="@+id/thirdSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/datePicker"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="#DED8D8"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp" />
+
+
+            <TextView
+                android:id="@+id/timeTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/thirdSeparator"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/time"
+                android:textColor="@color/txt_clr" />
+
+
+            <Button
+
+                android:id="@+id/timePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeTxt"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/set_time"
+                style="@style/button_style"
+                android:layout_alignLeft="@+id/tripNameTxt"/>
+
+            <TextView
+                android:id="@+id/selected_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/timePicker"
+                android:layout_toRightOf="@+id/timePicker"
+                android:layout_marginLeft="50dp"
+
+                />
+
+            <View
+                android:id="@+id/fourthSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/timePicker"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="#DED8D8" />
+
+            <!--here-->
+
+
+            <TextView
+                android:id="@+id/tripTypeid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/fourthSeparator"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/tripTypeText"
+                android:textColor="@color/txt_clr" />
+
+            <ToggleButton
+                android:id="@+id/toggBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_alignTop="@+id/tripTypeid"
+                android:layout_marginLeft="100dp"
+                android:layout_toRightOf="@+id/tripTypeid"
+                android:textOff="Single"
+                android:textOn="Double" />
+
+
+            <View
+                android:id="@+id/fifthSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/toggBtn"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="#DED8D8" />
+
+
+            <TextView
+                android:id="@+id/dateTxt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/startPointTxt"
+                android:layout_alignStart="@+id/startPointTxt"
+                android:layout_below="@+id/fifthSeparator"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/datetext"
+                android:textColor="@color/txt_clr"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/datePicker2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateTxt2"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/set_return_date"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/selected_return_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/datePicker2"
+                android:layout_toRightOf="@+id/datePicker2"
+                android:layout_marginLeft="50dp"
+                android:visibility="gone"
+                />
+
+
+            <View
+                android:id="@+id/thirdSeparator2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/datePicker2"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="#DED8D8"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/timeTxt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/thirdSeparator2"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/timetext"
+                android:textColor="@color/txt_clr"
+                android:visibility="gone" />
+
+
+            <Button
+
+                android:id="@+id/timePicker2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeTxt2"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/set_return_time"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/selected_return_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/timePicker2"
+                android:layout_toRightOf="@+id/timePicker2"
+                android:layout_marginLeft="50dp"
+                android:visibility="gone"
+                />
+
+
+            <TextView
+                android:id="@+id/addNoteTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/timePicker2"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:text="@string/noteText"
+                android:textColor="@color/txt_clr"
+                android:textColorHint="@color/input_login_hint" />
+
+
+            <EditText
+                android:id="@+id/editNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/addNoteTxt"
+                android:layout_marginTop="20dp"
+                android:hint="Add Note Here .. "
+                android:textColorHint="@color/input_login_hint"
+
+                />
+
+            <Button
+                android:id="@+id/btnAddToList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editNote"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/tolist"
+                style="@style/button_style"/>
+
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/btnAddToList"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"></ListView>
+
+
+            <View
+                android:id="@+id/sixthSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/listView"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="#DED8D8" />
+
+
+            <!--here invisable components -->
+
+
+            <!--here invisable components -->
+
+
+            <Button
+                android:id="@+id/showTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/listView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/addTrip"
+                style="@style/button_style" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
+

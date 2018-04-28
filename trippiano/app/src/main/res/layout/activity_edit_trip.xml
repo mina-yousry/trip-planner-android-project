@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:context="com.example.hazem.facebooklogin.views.EditTrip">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:context="com.example.hagar.autocomplete.AddTrip">
+
+            <TextView
+                android:id="@+id/addTripTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="49dp"
+                android:textSize="32sp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/black"
+                android:text="@string/editTrip" />
+
+            <View
+                android:id="@+id/firstSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/addTripTxt"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="#DED8D8" />
+
+
+
+
+            <TextView
+                android:id="@+id/tripNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/addTripTxt"
+                android:layout_marginLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/black"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="100dp"
+                android:text="@string/ttipname" />
+
+            <EditText
+                android:id="@+id/tripNameId"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tripNameTxt"
+                android:layout_alignBottom="@+id/tripNameTxt"
+                android:layout_marginLeft="72dp"
+                android:layout_toRightOf="@+id/tripNameTxt"
+                android:ems="10"
+                android:textColorHint="@color/input_login_hint"
+                android:hint="@string/trip_name" />
+
+            <TextView
+                android:id="@+id/startPointTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/tripNameId"
+                android:textColor="@color/black"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="37dp"
+                android:text="@string/start" />
+
+            <fragment
+                android:id="@+id/place_autocomplete_fragment"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/startPointTxt"
+                android:layout_alignTop="@+id/startPointTxt">
+
+            </fragment>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/startPointTxt"
+                android:layout_marginTop="44dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/black"
+                android:text="@string/end" />
+
+            <fragment
+                android:id="@+id/place_autocomplete_fragment2"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/textView4"
+                android:layout_alignTop="@+id/textView4">
+
+            </fragment>
+
+            <View
+                android:id="@+id/secondSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/place_autocomplete_fragment2"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="#DED8D8"/>
+
+
+            <TextView
+                android:id="@+id/dateTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/startPointTxt"
+                android:layout_alignStart="@+id/startPointTxt"
+                android:layout_below="@+id/secondSeparator"
+                android:textColor="@color/black"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/date2" />
+
+
+            <Button
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_below="@+id/dateTxt"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                style="@style/button_style"
+                android:text="@string/set_date" />
+
+            <TextView
+                android:id="@+id/selected_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/datePicker"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@+id/datePicker"
+
+                />
+
+
+            <View
+                android:id="@+id/thirdSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/datePicker"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="#DED8D8" />
+
+            <TextView
+                android:id="@+id/timeTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/thirdSeparator"
+                android:layout_marginTop="20dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/black"
+                android:text="@string/time" />
+            <Button
+
+                android:id="@+id/timePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/timeTxt"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                style="@style/button_style"
+                android:text="@string/set_time" />
+
+            <TextView
+                android:id="@+id/selected_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/timePicker"
+                android:layout_toRightOf="@+id/timePicker"
+                android:layout_marginLeft="50dp"
+
+                />
+
+            <View
+                android:id="@+id/fourthSeparator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/timePicker"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="#DED8D8" />
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/addNoteTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:text="@string/noteText"
+                android:paddingTop="16dp"
+                android:textColor="@color/black"
+
+                android:paddingBottom="8dp"
+                android:layout_marginTop="20dp"
+                android:textColorHint="@color/input_login_hint"
+                android:layout_marginBottom="20dp"
+                android:layout_below="@+id/fourthSeparator"/>
+
+
+
+            <EditText
+                android:id="@+id/editNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/addNoteTxt"
+                android:layout_marginTop="20dp"
+                android:textColorHint="@color/input_login_hint"
+                android:hint="Add Note Here .. "
+
+                />
+
+            <Button
+                android:id="@+id/btnAddToList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/editNote"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                style="@style/button_style"
+                android:text="@string/tolist"
+                />
+
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignLeft="@+id/tripNameTxt"
+                android:layout_alignStart="@+id/tripNameTxt"
+                android:layout_below="@+id/btnAddToList"
+                android:layout_centerHorizontal="true"
+                >
+            </ListView>
+
+
+            <Button
+                android:id="@+id/showTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/listView"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true"
+                style="@style/button_style"
+                android:text="@string/editTrip" />
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
